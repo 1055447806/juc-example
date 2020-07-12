@@ -1,5 +1,8 @@
 package com.ohh.jcu.atomic;
 
+/**
+ * just in time
+ */
 public class JITTest {
     private static volatile boolean init = false;
 
