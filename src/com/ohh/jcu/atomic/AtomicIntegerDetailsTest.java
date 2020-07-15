@@ -25,6 +25,9 @@ public class AtomicIntegerDetailsTest {
         System.out.println(i.get());
     }
 
+    /**
+     * 单线程
+     */
     @Test
     public void testGetAndAdd() {
         AtomicInteger i = new AtomicInteger();
@@ -33,6 +36,10 @@ public class AtomicIntegerDetailsTest {
         System.out.println(i.get());
     }
 
+    /**
+     * 多线程
+     * @throws InterruptedException
+     */
     @Test
     public void testGetAndAdd2() throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(5);
@@ -51,7 +58,16 @@ public class AtomicIntegerDetailsTest {
         for (int i = 0; i < 5; i++) {
             new Thread(runnable).start();
         }
+
         countDownLatch.await();
+    }
+
+    @Test
+    public void test() {
+        AtomicInteger i = new AtomicInteger(10);
+        final boolean flag = i.compareAndSet(12, 20);
+        System.out.println("flag = " + flag);
+        System.out.println("i.get() = " + i.get());
     }
 
 }
