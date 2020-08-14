@@ -1,4 +1,4 @@
-package com.ohh.jcu.atomic;
+package com.ohh.juc.atomic;
 
 public class GetLockException extends Exception {
     public GetLockException() {

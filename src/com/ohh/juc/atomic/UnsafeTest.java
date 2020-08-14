@@ -1,4 +1,4 @@
-package com.ohh.jcu.atomic;
+package com.ohh.juc.atomic;
 
 import org.junit.Test;
 import sun.misc.Unsafe;
@@ -23,17 +23,17 @@ public class UnsafeTest {
 
     /**
      * expected: 1000 * 10000 = 10000000
-     *
+     * <p>
      * StupidCounter:   Counter result:9950122
-     *                  Time passed in ms:397
+     * Time passed in ms:397
      * SyncCounter:     Counter result:10000000
-     *                  Time passed in ms:732
+     * Time passed in ms:732
      * LockCounter:     Counter result:10000000
-     *                  Time passed in ms:806
+     * Time passed in ms:806
      * AtomicCounter:   Counter result:10000000
-     *                  Time passed in ms:470
+     * Time passed in ms:470
      * CASCounter:      Counter result:10000000
-     *                  Time passed in ms:903
+     * Time passed in ms:903
      */
     public static void main(String[] args) throws InterruptedException, NoSuchFieldException {
         ExecutorService service = Executors.newFixedThreadPool(1000);
@@ -67,10 +67,11 @@ public class UnsafeTest {
 
     interface Counter {
         void increment();
+
         long getCounter();
     }
 
-    static class StupidCounter implements Counter{
+    static class StupidCounter implements Counter {
 
         private long counter = 0;
 
@@ -85,7 +86,7 @@ public class UnsafeTest {
         }
     }
 
-    static class SyncCounter implements Counter{
+    static class SyncCounter implements Counter {
 
         private long counter = 0;
 
@@ -100,7 +101,7 @@ public class UnsafeTest {
         }
     }
 
-    static class LockCounter implements Counter{
+    static class LockCounter implements Counter {
 
         private long counter = 0;
 
@@ -122,7 +123,7 @@ public class UnsafeTest {
         }
     }
 
-    static class AtomicCounter implements Counter{
+    static class AtomicCounter implements Counter {
 
         private final AtomicLong counter = new AtomicLong();
 
@@ -137,7 +138,7 @@ public class UnsafeTest {
         }
     }
 
-    static class CASCounter implements Counter{
+    static class CASCounter implements Counter {
 
         private volatile long counter = 0;
         private Unsafe unsafe;
@@ -150,7 +151,7 @@ public class UnsafeTest {
 
         @Override
         public void increment() {
-                long current;
+            long current;
             do {
                 current = counter;
             } while (!unsafe.compareAndSwapLong(this, offset, current, current + 1));

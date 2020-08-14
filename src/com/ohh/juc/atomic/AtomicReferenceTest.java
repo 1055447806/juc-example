@@ -1,4 +1,4 @@
-package com.ohh.jcu.atomic;
+package com.ohh.juc.atomic;
 
 import java.util.concurrent.atomic.AtomicReference;
 

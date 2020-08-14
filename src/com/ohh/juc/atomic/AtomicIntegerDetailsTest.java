@@ -1,9 +1,8 @@
-package com.ohh.jcu.atomic;
+package com.ohh.juc.atomic;
 
 import org.junit.Test;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicIntegerDetailsTest {
