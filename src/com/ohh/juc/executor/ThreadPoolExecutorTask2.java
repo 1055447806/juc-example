@@ -17,7 +17,7 @@ public class ThreadPoolExecutorTask2 {
         for (int i = 0; i < 1; i++) {
             executorService.submit(() -> {
                 while (true) {
-
+                    //empty
                 }
             });
         }
