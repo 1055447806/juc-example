@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * shutdown方法会在当前任务结束后关闭线程池，
+ * shutdown方法会在当前执行的和队列中的任务结束后关闭线程池，
  * awaitTermination方法会阻塞线程直到线程池中所有线程被关闭
  * <p>
  * shutdownNow方法会中断所有工作线程，并排干blockingQueue再返回
