@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jcuexample.iml" filepath="$PROJECT_DIR$/jcuexample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/juc-example.iml" filepath="$PROJECT_DIR$/juc-example.iml" />
     </modules>
   </component>
 </project>
