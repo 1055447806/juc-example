@@ -5,7 +5,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
-public class ScheduledExecutorServiceExample1 {
+public class ScheduledExecutorServiceExample {
     public static void main(String[] args) throws InterruptedException {
 //        testSchedule();
 //        testCancel();
