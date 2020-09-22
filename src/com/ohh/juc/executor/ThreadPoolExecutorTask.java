@@ -18,8 +18,13 @@ public class ThreadPoolExecutorTask {
                 System.out.println(Thread.currentThread().getName() + ": is finished");
             });
         }
-        /*executorService.shutdown();
-        executorService.awaitTermination(60, TimeUnit.SECONDS);*/
+        /*
+        //shutdown
+        executorService.shutdown();
+        executorService.awaitTermination(60, TimeUnit.SECONDS);
+        */
+
+        //shutdownNow
         List<Runnable> runnableList = executorService.shutdownNow();
         System.out.println("executor call shutdown...");
         System.out.println("runnableList.size() = " + runnableList.size());
