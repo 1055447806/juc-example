@@ -3,6 +3,9 @@ package com.ohh.juc.executor;
 import java.util.concurrent.*;
 import java.util.stream.IntStream;
 
+/**
+ * 简单的认识 CompletableFuture
+ */
 public class CompletableFutureExample1 {
 
     public static void main(String[] args) throws InterruptedException {
