@@ -1,4 +1,4 @@
-package com.ohh.juc.executor;
+package com.ohh.juc.executor.completableFuture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,9 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
+/**
+ * CompletableFuture 的几种创建方式。
+ */
 public class CompletableFutureExample2 {
 
     public static void main(String[] args) throws InterruptedException {

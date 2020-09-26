@@ -5,6 +5,4 @@ public class SimpleThreadAPI {
         Thread t = new Thread();
         t.setPriority(Thread.MIN_PRIORITY);
     }
-
-
 }
