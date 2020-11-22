@@ -1,4 +1,4 @@
-package com.ohh.juc.collections;
+package com.ohh.juc.collections.custom;
 
 /**
  * 自定义一个 LinkedList
