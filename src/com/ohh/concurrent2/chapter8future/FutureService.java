@@ -14,7 +14,7 @@ public class FutureService {
     /**
      * 通过 submit 方法提交一个 Callable，此时会创建一个与之绑定的 AsyncFutureTask，
      * 通过启动一个新的线程去执行 call 方法，当 call 执行结束后，通过调用 future 的 set 方法，
-     * 将结果保存在 future 中，最会把保存了执行结果的 future 返回。
+     * 将结果保存在 future 中，最后把保存了执行结果的 future 返回。
      *
      * @param callable 被执行的任务
      * @param <T>      执行结果的类型
