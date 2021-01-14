@@ -5,6 +5,7 @@ package com.ohh.concurrent2.chapter8future;
  * 一个状态标记 isDone，和一个响应结果 result，
  * 这个容器用来保存一些任务的响应结果。
  *
+ * @author Gary
  * @param <T> 响应结果的类型
  */
 public class AsyncFutureTask<T> implements Future<T> {

@@ -4,8 +4,8 @@ package com.ohh.concurrent2.chapter8future;
  * Callable 接口
  * Callable 是 “等待执行的任务” 的抽象
  *
- * @param <T> 返回值类型
  * @author Gary
+ * @param <T> 返回值类型
  */
 public interface Callable<T> {
     /**
