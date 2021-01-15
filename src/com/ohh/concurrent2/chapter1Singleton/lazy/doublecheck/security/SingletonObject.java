@@ -10,9 +10,8 @@ package com.ohh.concurrent2.chapter1Singleton.lazy.doublecheck.security;
 public class SingletonObject {
 
     /**
-     * 类内部的实例引用，使用 volatile 关键字进行了修饰，在线程获取该引用的值时，
-     * 若引用的值发生了变更，会重新从主存中获取这个新值，而不是中 cache 中直接读取，
-     * 从而保证了可见性，解决了 double-check 机制带来的由于更新不及时，重复初始化多个实例的问题。
+     * 类内部的实例引用，使用 volatile 关键字进行了修饰，禁止了 JVM 对指令的优化，
+     * 有效的解决了代码 ① 处和 代码 ③ 处的并发由于指令重排所带来的隐患。
      */
     private static volatile SingletonObject instance;
 
@@ -22,10 +21,10 @@ public class SingletonObject {
      * @return 实例的引用
      */
     public static SingletonObject getInstance() {
-        if (null == instance) {
+        if (null == instance) { // ①
             synchronized (SingletonObject.class) {
-                if (null == instance) {
-                    instance = new SingletonObject();
+                if (null == instance) { // ②
+                    instance = new SingletonObject(); // ③
                 }
             }
         }
