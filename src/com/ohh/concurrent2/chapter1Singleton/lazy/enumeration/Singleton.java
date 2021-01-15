@@ -8,6 +8,8 @@ package com.ohh.concurrent2.chapter1Singleton.lazy.enumeration;
  * 通过枚举的方式对单例对象进行维护，枚举的构造方法是私有的且只会被加载一次，
  * 并且线程安全，所以可以通过在枚举中定义需要被维护的单例对象，
  * 通过 “Singleton.INSTANCE.getInstance()” 的方式获取单例对象。
+ *
+ * @author Gary
  */
 public enum Singleton {
 
