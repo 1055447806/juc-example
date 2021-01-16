@@ -1,4 +1,4 @@
-package com.ohh.concurrent2.chapter6;
+package com.ohh.concurrent2.chapter6readwritelock;
 
 public class SharedData {
 

@@ -15,7 +15,7 @@ public class ThreadLifeCycleObserver implements LifeCycleListener {
     /**
      * 通知方法, 在控制台打印查询的进度和结果
      *
-     * @param event 查询结果的实例
+     * @param event 事件体
      */
     @Override
     public synchronized void onEvent(ObservableRunnable.RunnableEvent event) {

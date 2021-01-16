@@ -1,6 +1,6 @@
-package com.ohh.concurrent2.chapter6;
+package com.ohh.concurrent2.chapter6readwritelock;
 
-public class ReadWriteLockClient {
+public class Main {
     public static void main(String[] args) {
         final SharedData sharedData = new SharedData(10);
         new ReadWorker(sharedData).start();
