@@ -16,6 +16,13 @@ public class SingletonObject {
     private static volatile SingletonObject instance;
 
     /**
+     * 私有化构造
+     */
+    private SingletonObject() {
+        // pass
+    }
+
+    /**
      * 获取实例的引用
      *
      * @return 实例的引用

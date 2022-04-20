@@ -17,7 +17,15 @@ public class SingletonObject {
     /**
      * 类内部维护的 “不可变静态” 实例
      */
-    private static final SingletonObject instance = new SingletonObject();
+    @SuppressWarnings("InstantiationOfUtilityClass")
+    private static final SingletonObject INSTANCE = new SingletonObject();
+
+    /**
+     * 私有化构造
+     */
+    private SingletonObject() {
+        // pass
+    }
 
     /**
      * 获取实例的方法
@@ -25,6 +33,6 @@ public class SingletonObject {
      * @return 实例
      */
     public static SingletonObject getInstance() {
-        return instance;
+        return INSTANCE;
     }
 }
