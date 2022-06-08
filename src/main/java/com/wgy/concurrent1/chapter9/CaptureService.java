@@ -9,14 +9,17 @@ import java.util.stream.Stream;
 public class CaptureService {
 
     private static final LinkedList<Control> CONTROLS = new LinkedList<>();
+
     private static final int MAX_WORKER = 5;
 
     public static void main(String[] args) {
         List<Thread> worker = new ArrayList<>();
-        Stream.of("M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10").map(CaptureService::createCaptureThread).forEach(t -> {
-            t.start();
-            worker.add(t);
-        });
+        Stream.of("M1", "M2", "M3", "M4", "M5", "M6", "M7", "M8", "M9", "M10")
+                .map(CaptureService::createCaptureThread)
+                .forEach(t -> {
+                    t.start();
+                    worker.add(t);
+                });
         worker.forEach(t -> {
             try {
                 t.join();
@@ -29,7 +32,8 @@ public class CaptureService {
 
     private static Thread createCaptureThread(String name) {
         return new Thread(() -> {
-            Optional.of("The worker [" + Thread.currentThread().getName() + "] is start.").ifPresent(System.out::println);
+            Optional.of("The worker [" + Thread.currentThread().getName() + "] is start.")
+                    .ifPresent(System.out::println);
             synchronized (CONTROLS) {
                 while (CONTROLS.size() >= MAX_WORKER) {
                     try {
